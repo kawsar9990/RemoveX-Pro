@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export default function StunningQuality() {
@@ -11,7 +10,7 @@ export default function StunningQuality() {
       id: "products",
       label: "Products",
       orig: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1793964790/1520190768707_wznisc.jpg",
-      trans: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1793973736/1520190768707-removebg-preview_fjtyav.png",
+      trans: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1794204681/1520190768707_wznisc-removebg-preview_bcnwmv.png",
     },
     {
       id: "animals",

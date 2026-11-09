@@ -126,41 +126,42 @@ return (
           backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0",
         }}
       >
-          <div className="relative w-full h-full flex items-center justify-center">
        
-              {isUploading && previewUrl ? (
-                <>
-                  <Image
-                    src={previewUrl}
-                    alt="Uploading preview"
-                    fill
-                    unoptimized
-                   className="object-contain pointer-events-none rounded-3xl"
-                  />
-                  <div className="absolute inset-0 z-30">
-                    <ImageSparkleLoader />
-                  </div>
-                </>
-              ) : selectedImage ? (
-                <Image
-                  src={isComparing ? originalImage : selectedImage}
-                  alt="Cutout Preview"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 420px"
-                  className="object-cover pointer-events-none rounded-3xl opacity-90"
-                  priority
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageLoaded(true)}
-                  unoptimized
-                />
-              ) : (
-                <div className="text-gray-400 text-sm font-medium">
-                  No image selected
-                </div>
-              )}
-            </div>
-          </div>
-        </main>
+<div className="relative w-full h-full flex items-center justify-center bg-white rounded-3xl overflow-hidden bg-[linear-gradient(45deg,#f0f0f0_25%,transparent_25%),linear-gradient(-45deg,#f0f0f0_25%,transparent_25%),linear-gradient(45deg,transparent_75%,#f0f0f0_75%),linear-gradient(-45deg,transparent_75%,#f0f0f0_75%)] bg-[size:20px_20px] bg-[position:0_0,0_10px,10px_-10px,-10px_0px]">
+       
+  {isUploading && previewUrl ? (
+    <>
+      <Image
+        src={previewUrl}
+        alt="Uploading preview"
+        fill
+        unoptimized
+        className="object-contain pointer-events-none rounded-3xl"
+      />
+      <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/20 backdrop-blur-xs">
+        <ImageSparkleLoader />
+      </div>
+    </>
+  ) : selectedImage ? (
+    <Image
+      src={isComparing ? originalImage : selectedImage}
+      alt="Cutout Preview"
+      fill
+      sizes="(max-width: 768px) 100vw, 420px"
+      className="object-contain pointer-events-none rounded-3xl"
+      priority
+      onLoad={() => setImageLoaded(true)}
+      onError={() => setImageLoaded(true)}
+      unoptimized
+    />
+  ) : (
+    <div className="text-gray-400 text-sm font-medium">
+      No image selected
+    </div>
+  )}
+</div>
+</div>
+</main>
 
       
         <footer className="w-full pb-8 px-4">
